@@ -46,9 +46,9 @@ html {
 
 body {
   @extend .center;
-  max-height: 100vh;
-  max-height: fill-available;
-  max-height: -webkit-fill-available;
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
   color: #F8CF40;
   font: 400 1.75vh/1 'Aldrich', sans-serif;
   text-align: center;
