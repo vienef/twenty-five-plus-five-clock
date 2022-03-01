@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.center, body main #minute-stick,
+body main #seconds-stick, body main section, body main div, body main, body > div div, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.before, body main div::before, body > div div::before {
+  content: "";
+  height: 115%;
+  width: 115%;
+  position: absolute;
+  top: -7.5%;
+  left: -7.5%;
+  border-radius: 50%;
+  background: linear-gradient(60deg, #F4EBD0, #D6AD60, #B68D40, #F4EBD0, #D6AD60, #B68D40, #F4EBD0, #D6AD60, #B68D40, #F4EBD0, #D6AD60, #B68D40);
+  box-shadow: 0 0 1vh #F8CF40;
+}
+
+.after, body main div::after, body > div div::after {
+  content: "";
+  height: 105%;
+  width: 105%;
+  position: absolute;
+  top: -2.5%;
+  left: -2.5%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #00F, #0A0A0A);
+  box-shadow: 0 0 2.5vh inset #0A0A0A;
+}
+
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+  color: #F8CF40;
+  font: 400 1.75vh/1 "Aldrich", sans-serif;
+  text-align: center;
+  background: #0A0A0A;
+  overflow: hidden;
+  user-select: none;
+}
+body > div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0.5;
+  overflow: hidden;
+}
+body > div div {
+  height: var(--div-height);
+  width: var(--div-width);
+  position: absolute;
+  top: var(--div-top);
+  left: var(--div-left);
+  border-radius: 50%;
+}
+body main {
+  height: 100vmin;
+  width: 100vmin;
+  position: relative;
+}
+body main div {
+  height: 85%;
+  width: 85%;
+  position: absolute;
+  border-radius: 50%;
+}
+body main div span {
+  height: 100%;
+  width: 0.75vh;
+  position: absolute;
+  z-index: 1;
+}
+body main div span::after {
+  content: "";
+  height: var(--height);
+  width: var(--width);
+  position: absolute;
+  top: 0;
+  left: var(--left);
+  background: var(--background, #F8CF40);
+  box-shadow: var(--shadow, "none");
+}
+body main h1 {
+  position: absolute;
+  top: 20%;
+  color: #F8CF40;
+  font: 900 5vh/1 "Aldrich", sans-serif;
+}
+body main section {
+  flex-direction: column;
+  height: 22.5vmin;
+  width: 22.5vmin;
+  position: absolute;
+}
+body main section div {
+  height: 100%;
+  width: 100%;
+}
+body main section div::before {
+  box-shadow: 0 0 2.5vh #0A0A0A;
+}
+body main section h2 {
+  z-index: 1;
+  color: #F5F5F5;
+  font-size: inherit;
+}
+body main section p {
+  z-index: 1;
+}
+body main section form {
+  display: flex;
+  justify-content: space-between;
+  width: 10vmin;
+  z-index: 2;
+}
+body main section form button {
+  color: #F5F5F5;
+  background: transparent;
+  border: none;
+}
+body main section form button i {
+  position: relative;
+  z-index: -1;
+}
+body main section form button:hover,
+body main section form button:focus {
+  color: #0A0A0A;
+  outline: none;
+}
+body main section:first-of-type {
+  left: 20%;
+}
+body main section:nth-child(4) {
+  right: 20%;
+}
+body main section:last-of-type {
+  bottom: 20%;
+}
+body main #minute-stick,
+body main #seconds-stick {
+  height: 85%;
+  width: 0;
+  position: absolute;
+  z-index: 1;
+}
+body main #minute-stick::before,
+body main #seconds-stick::before {
+  content: "";
+  position: absolute;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(180deg, #F4EBD0, #D6AD60, #B68D40);
+  box-shadow: 0 0 2.5vh #0A0A0A;
+}
+body main #minute-stick::before {
+  height: 35%;
+  width: 2.5vh;
+  top: 15%;
+}
+body main #seconds-stick::before {
+  height: 45%;
+  width: 1.5vh;
+  top: 5%;
+}
+body main #seconds-stick::after {
+  content: "";
+  height: 5vmin;
+  width: 5vmin;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #F4EBD0, #D6AD60, #B68D40);
+  box-shadow: 0 0 2.5vh #0A0A0A;
+}
+
+/*# sourceMappingURL=index.css.map */

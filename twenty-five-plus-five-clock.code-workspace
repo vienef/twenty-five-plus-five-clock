@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.bracketPairColorization.enabled": true,
+		"workbench.colorCustomizations": {
+			"editorBracketHighlight.foreground1": "#FFD700",
+			"editorBracketHighlight.foreground2": "#DA70D6",
+			"editorBracketHighlight.foreground3": "#179fff",
+		}
+	}
+}

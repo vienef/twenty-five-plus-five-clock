@@ -1,0 +1,217 @@
+$golden: #F4EBD0, #D6AD60, #B68D40;
+$golden-background: linear-gradient(180deg, $golden);
+$shadow: 0 0 2.5vh #0A0A0A;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.center {    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.before {
+  content: '';
+  height: 115%;
+  width: 115%;
+  position: absolute;
+  top: -7.5%;
+  left: -7.5%;
+  border-radius: 50%;
+  background: linear-gradient(60deg, #{$golden}, #{$golden}, #{$golden}, #{$golden});
+  box-shadow: 0 0 1vh #F8CF40;
+}
+
+.after {
+  content: '';
+  height: 105%;
+  width: 105%;
+  position: absolute;
+  top: -2.5%;
+  left: -2.5%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #00F, #0A0A0A);
+  box-shadow: 0 0 2.5vh inset #0A0A0A;
+}
+
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
+}
+
+body {
+  @extend .center;
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+  color: #F8CF40;
+  font: 400 1.75vh/1 'Aldrich', sans-serif;
+  text-align: center;
+  background: #0A0A0A;
+  overflow: hidden;
+  user-select: none;
+
+  > div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0.5;
+    overflow: hidden;
+
+    div {
+      @extend .center;
+      height: var(--div-height);
+      width: var(--div-width);      
+      position: absolute;
+      top: var(--div-top);
+      left: var(--div-left);
+      border-radius: 50%;
+    }
+
+    div::before { @extend .before; }
+
+    div::after { @extend .after; }
+  }
+
+  main {
+    @extend .center;
+    height: 100vmin;
+    width: 100vmin;
+    position: relative;
+
+    div {
+      @extend .center;
+      height: 85%;
+      width: 85%;
+      position: absolute;
+      border-radius: 50%;
+
+      span {
+        height: 100%;
+        width: 0.75vh;
+        position: absolute;
+        z-index: 1;
+      }
+
+      span::after {
+        content: '';
+        height: var(--height);
+        width: var(--width);
+        position: absolute;
+        top: 0;
+        left: var(--left);
+        background: var(--background, #F8CF40);
+        box-shadow: var(--shadow, 'none');
+      }
+    }
+
+    div::before { @extend .before; }
+
+    div::after { @extend .after; }
+
+    h1 {
+      position: absolute;
+      top: 20%;
+      color: #F8CF40;
+      font: 900 5vh/1 'Aldrich', sans-serif;
+    }
+
+    section {
+      @extend .center;
+      flex-direction: column;
+      height: 22.5vmin;
+      width: 22.5vmin;
+      position: absolute;
+
+      div {
+        height: 100%;
+        width: 100%;
+      }
+
+      div::before { box-shadow: #{$shadow}; }
+      
+      h2 {
+        z-index: 1;
+        color: #F5F5F5;
+        font-size: inherit;
+      }
+
+      p { z-index: 1; }
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        width: 10vmin;
+        z-index: 2;
+
+        button {
+          color: #F5F5F5;
+          background: transparent;
+          border: none;
+
+          i {
+            position: relative;
+            z-index: -1;
+          }
+        }
+
+        button:hover,
+        button:focus {
+          color: #0A0A0A;
+          outline: none;
+        }
+      }
+    }
+
+    section:first-of-type { left: 20%; }
+
+    section:nth-child(4) { right: 20%; }
+
+    section:last-of-type { bottom: 20%; }
+
+    #minute-stick,
+    #seconds-stick {
+      @extend .center;
+      height: 85%;
+      width: 0;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #minute-stick::before,
+    #seconds-stick::before {
+      content: '';
+      position: absolute;
+      border-radius: 50% 50% 0 0;
+      background: #{$golden-background};
+      box-shadow: #{$shadow};
+    }
+
+    #minute-stick::before {      
+      height: 35%;
+      width: 2.5vh;
+      top: 15%;
+    }
+
+    #seconds-stick::before {
+      height: 45%;
+      width: 1.5vh;
+      top: 5%;
+    }
+
+    #seconds-stick::after {
+      content: '';
+      height: 5vmin;
+      width: 5vmin;
+      position: absolute;
+      border-radius: 50%;
+      background: #{$golden-background};
+      box-shadow: #{$shadow};
+    }
+  }
+}
