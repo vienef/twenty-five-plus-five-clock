@@ -53,7 +53,7 @@ body {
   user-select: none;
 }
 body > div {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   opacity: 0.5;
