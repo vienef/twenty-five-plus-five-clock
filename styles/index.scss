@@ -40,17 +40,17 @@ $shadow: 0 0 2.5vh #0A0A0A;
 }
 
 html {
-  height: fill-available;
+  height: stretch;
   height: -webkit-fill-available;
 }
 
 body {
   @extend .center;
   min-height: 100vh;
-  min-height: fill-available;
+  min-height: stretch;
   min-height: -webkit-fill-available;
   color: #F8CF40;
-  font: 400 1.75vmin/1 'Aldrich', sans-serif;
+  font: 400 2vh/1 'Aldrich', sans-serif;
   text-align: center;
   background: #0A0A0A;
   overflow: hidden;
@@ -116,7 +116,7 @@ body {
 
     h1 {
       position: absolute;
-      top: 20%;
+      top: 15%;
       color: #F8CF40;
       font: 900 5vmin/1 'Aldrich', sans-serif;
     }
@@ -124,8 +124,8 @@ body {
     section {
       @extend .center;
       flex-direction: column;
-      height: 22.5vmin;
-      width: 22.5vmin;
+      height: 25vmin;
+      width: 25vmin;
       position: absolute;
 
       div {
@@ -146,7 +146,7 @@ body {
       form {
         display: flex;
         justify-content: space-between;
-        width: 10vmin;
+        width: 15vmin;
         z-index: 2;
 
         button {
@@ -168,11 +168,11 @@ body {
       }
     }
 
-    section:first-of-type { left: 20%; }
+    section:first-of-type { left: 15%; }
 
-    section:nth-child(4) { right: 20%; }
+    section:nth-child(4) { right: 15%; }
 
-    section:last-of-type { bottom: 20%; }
+    section:last-of-type { bottom: 15%; }
 
     #minute-stick,
     #seconds-stick {

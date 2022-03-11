@@ -37,16 +37,16 @@ body main #seconds-stick, body main section, body main div, body main, body > di
 }
 
 html {
-  height: fill-available;
+  height: stretch;
   height: -webkit-fill-available;
 }
 
 body {
   min-height: 100vh;
-  min-height: fill-available;
+  min-height: stretch;
   min-height: -webkit-fill-available;
   color: #F8CF40;
-  font: 400 1.75vmin/1 "Aldrich", sans-serif;
+  font: 400 2vh/1 "Aldrich", sans-serif;
   text-align: center;
   background: #0A0A0A;
   overflow: hidden;
@@ -96,14 +96,14 @@ body main div span::after {
 }
 body main h1 {
   position: absolute;
-  top: 20%;
+  top: 15%;
   color: #F8CF40;
   font: 900 5vmin/1 "Aldrich", sans-serif;
 }
 body main section {
   flex-direction: column;
-  height: 22.5vmin;
-  width: 22.5vmin;
+  height: 25vmin;
+  width: 25vmin;
   position: absolute;
 }
 body main section div {
@@ -124,7 +124,7 @@ body main section p {
 body main section form {
   display: flex;
   justify-content: space-between;
-  width: 10vmin;
+  width: 15vmin;
   z-index: 2;
 }
 body main section form button {
@@ -142,13 +142,13 @@ body main section form button:focus {
   outline: none;
 }
 body main section:first-of-type {
-  left: 20%;
+  left: 15%;
 }
 body main section:nth-child(4) {
-  right: 20%;
+  right: 15%;
 }
 body main section:last-of-type {
-  bottom: 20%;
+  bottom: 15%;
 }
 body main #minute-stick,
 body main #seconds-stick {
